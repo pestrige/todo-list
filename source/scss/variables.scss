@@ -1,0 +1,36 @@
+/* Fonts */
+$font-light: "Gilroy Light", "Verdana", sans-serif;
+$font-regular: "Gilroy Regular", "Verdana", sans-serif;
+$font-bold: "Gilroy Bold", "Verdana", sans-serif;
+
+/* Custom CSS Prop */
+:root {
+
+	/* Colors */
+	--basic-300: #7395cf;
+	--basic-300-fade: rgba(115, 149, 207, 0.3);
+	--basic-400: #3c5073;
+
+	--accent-300: #92e2ff;
+	--accent: #1dbef9;
+	--accent-fade: rgba(29, 190, 249, 0.3);
+
+	--second-accent-300: #ffd099;
+	--second-accent: #fe9b4b;
+	--second-accent-fade: rgba(254, 155, 75, 0.3);
+
+	--text: #45597a;
+	--text-700: #1e2843;
+
+	--background-300: #f9f9f9;
+	--background: #f0f0f1;
+	--background-fade: rgba(240, 240, 241, 0.3);
+	--background-accent: rgba(151, 97, 246, 0.2);
+
+	--shadow-basic: #cccccd;
+
+	/* Margins */
+	--margin: 20px;
+}
+
+

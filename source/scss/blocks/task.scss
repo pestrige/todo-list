@@ -1,0 +1,51 @@
+.task {
+	position: relative;
+	z-index: 3;
+	padding: 15px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 30px;
+	box-shadow:	10px 10px 20px var(--shadow-basic);
+	background-color: var(--background-300);
+	cursor: pointer;
+}
+
+.task__title {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: $font-regular;
+}
+
+.task__range {
+	display: block;
+	position: relative;
+	width: 30px;
+	height: 15px;
+	border-radius: 10px;
+	background-color: #d5dce3;
+	cursor: pointer;
+	transition: background-color 0.5s;
+}
+
+.task__handler {
+	position: absolute;
+	top: -3px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	box-shadow: 3px 3px 6px var(--shadow-basic);
+	background-color: #fff;
+	cursor: pointer;
+	transition: left 0.5s, box-shadow 0.5s;
+}
+
+.task__input:checked + .task__range {
+	background-color: var(--accent);
+
+	.task__handler {
+		left: calc(100% - 20px);
+		box-shadow: 3px 3px 6px #9fdcf8;
+	}
+}
