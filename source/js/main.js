@@ -5,6 +5,7 @@ const newTaskInput = newTaskContainer.querySelector('.todo-list__add-input');
 const newTaskAddButton = newTaskContainer.querySelector('.todo-list__add-btn');
 const newTaskTemplate = document.querySelector('#new-task').content.querySelector('.task');
 
+// Добавление задачи
 const addTask = () => {
 	const newTaskText = newTaskInput.value;
 	const newTask = newTaskTemplate.cloneNode(true);
@@ -13,6 +14,7 @@ const addTask = () => {
 	if (newTaskText === '') {
 		return false;
 	}
+	// рендерим задачу в списке
 	newTaskTextContainer.textContent = newTaskText;
 	todoList.appendChild(newTask);
 	newTaskInput.value = '';
@@ -32,4 +34,16 @@ const onNewTaskAddButtonClick = (evt) => {
 	}
 };
 
+// Удаление задач
+const onTaskHandlerClick = (evt) => {
+	const isTaskHandler = evt.target.classList.contains('task__input');
+	const currentTask = evt.target.closest('.task');
+	if (!isTaskHandler) {
+		return false;
+	}
+	currentTask.classList.add('task--hide');
+	setTimeout(() => currentTask.remove(), 800);
+};
+
+todoList.addEventListener('click', onTaskHandlerClick);
 newTaskAddButton.addEventListener('click', onNewTaskAddButtonClick);
