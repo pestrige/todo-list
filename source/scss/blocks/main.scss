@@ -1,5 +1,4 @@
 .main {
-	// position: relative;
 	min-height: 100vh;
 	padding: 30px 20px;
 	display: flex;
@@ -13,24 +12,4 @@
 		var(--background) 77%, 
 		var(--second-accent-fade) 100%
 	);
-
-	// &::before, &::after {
-	// 	content: "";
-	// 	position: absolute;
-	// 	width: 30%;
-	// 	height: 30%;
-	// 	filter: blur(40px);
-	// }
-
-	// &::before {
-	// 	top: 40%;
-	// 	left: 0;
-	// 	background-color: var(--background-accent);
-	// }
-
-	// &::after {
-	// 	bottom: 0;
-	// 	right: 0;
-	// 	background-color: var(--second-accent-fade);
-	// }
 }
