@@ -1,4 +1,4 @@
-# Проект "To-Do List" [![Check status][check-image]][check-url]
+# Проект "To-Do List"
 
 ---
 
@@ -12,13 +12,11 @@
 - Кроссбраузерность
 - Семантичная, адаптивная и резиновая верстка
 - Минификация html/css/js
-- Drag&Drop API
 
 ---
 
 ### Опубликованная версия доступна по ссылке:
 
----
+https://pestrige.github.io/todo-list/
 
-[check-image]: https://github.com/htmlacademy-adaptive/974243-pognali-21/workflows/Project%20check/badge.svg?branch=master
-[check-url]: https://github.com/htmlacademy-adaptive/974243-pognali-21/actions
+---
