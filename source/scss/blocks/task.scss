@@ -1,6 +1,4 @@
 .task {
-	position: relative;
-	z-index: 3;
 	padding: 15px 20px;
 	display: flex;
 	justify-content: space-between;
@@ -9,6 +7,16 @@
 	box-shadow:	10px 10px 20px var(--shadow-basic);
 	background-color: var(--background-300);
 	cursor: pointer;
+	opacity: 1;
+	transform: none;
+	transition: transform 0.3s, box-shadow 1s, opacity 0.3s;
+	transition-delay: 0.5s;
+
+	&--hide {
+		transform: scale(0);
+		box-shadow: none;
+		opacity: 0;
+	}
 }
 
 .task__title {
@@ -25,7 +33,7 @@
 	border-radius: 10px;
 	background-color: #d5dce3;
 	cursor: pointer;
-	transition: background-color 0.5s;
+	transition: background-color 0.3s;
 }
 
 .task__handler {
@@ -38,7 +46,7 @@
 	box-shadow: 3px 3px 6px var(--shadow-basic);
 	background-color: #fff;
 	cursor: pointer;
-	transition: left 0.5s, box-shadow 0.5s;
+	transition: left 0.3s, box-shadow 0.3s;
 }
 
 .task__input:checked + .task__range {
