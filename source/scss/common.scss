@@ -36,6 +36,17 @@ input[type="radio"].visually-hidden {
   font-size: 14px;
   line-height: 20px;
   color: var(--text);
+
+	&--transition,
+	&--transition *,
+	&--transition &::before,
+	&--transition &::after {
+		transition: 
+			background 0.3s,
+			box-shadow 0.3s,
+			border-color 0.3s,
+			mask-image 0.3s;
+	}
 }
 
 .title {
@@ -53,7 +64,7 @@ input[type="radio"].visually-hidden {
 		right: 0;
 		height: 1px;
 		border-radius: 2px;
-		background-color: var(--basic-300-fade);
+		background-color: var(--decor-color);
 	}
 }
 
@@ -62,4 +73,8 @@ input[type="radio"].visually-hidden {
 	font-size: 16px;
 	line-height: 18px;
 	color: var(--accent);
+}
+
+.transition {
+	transition: all 0.5s;
 }

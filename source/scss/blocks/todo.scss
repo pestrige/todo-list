@@ -1,7 +1,6 @@
 .todo {
 	position: relative;
 	width: 100%;
-	max-width: 550px;
 	border-radius: 30px;
 	background-color: var(--background-300);
 	box-shadow:	15px 15px 30px var(--shadow-basic);
@@ -48,6 +47,6 @@
 		right: 0;
 		height: 1px;
 		border-radius: 2px;
-		background-color: var(--basic-300-fade);
+		background-color: var(--decor-color);
 	}
 }

@@ -9,13 +9,16 @@
 	cursor: pointer;
 	opacity: 1;
 	transform: none;
-	transition: transform 0.3s, box-shadow 1s, opacity 0.3s;
-	transition-delay: 0.5s;
 
 	&--hide {
 		transform: scale(0);
 		box-shadow: none;
 		opacity: 0;
+	}
+
+	&--transition {
+		transition: transform 0.3s, box-shadow 1s, opacity 0.3s;
+		transition-delay: 0.5s;	
 	}
 }
 
@@ -44,7 +47,7 @@
 	height: 20px;
 	border-radius: 20px;
 	box-shadow: 3px 3px 6px var(--shadow-basic);
-	background-color: #fff;
+	background-color: var(--contrast);
 	cursor: pointer;
 	transition: left 0.3s, box-shadow 0.3s;
 }
@@ -54,6 +57,7 @@
 
 	.task__handler {
 		left: calc(100% - 20px);
-		box-shadow: 3px 3px 6px #9fdcf8;
+		//box-shadow: 3px 3px 6px #9fdcf8;
+		box-shadow: 3px 3px 6px var(--accent-300);
 	}
 }

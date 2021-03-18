@@ -4,15 +4,18 @@ $font-regular: "Gilroy Regular", "Verdana", sans-serif;
 $font-bold: "Gilroy Bold", "Verdana", sans-serif;
 
 /* Custom CSS Prop */
-:root {
+.body {
 
-	/* Colors */
+	/* Light Theme Colors */
 	--basic-300: #7395cf;
 	--basic-300-fade: rgba(115, 149, 207, 0.3);
 	--basic-400: #3c5073;
 
 	--accent-300: #92e2ff;
+	--accent-400: #1dbef9;
 	--accent: #1dbef9;
+	--accent-600: #1dbef9;
+	--accent-700: #19a2d4;
 	--accent-fade: rgba(29, 190, 249, 0.3);
 
 	--second-accent-300: #ffd099;
@@ -21,6 +24,7 @@ $font-bold: "Gilroy Bold", "Verdana", sans-serif;
 
 	--text: #45597a;
 	--text-700: #1e2843;
+	--text-700-fade: rgba(30, 40, 67, 0.3);
 
 	--background-300: #f9f9f9;
 	--background: #f0f0f1;
@@ -28,9 +32,40 @@ $font-bold: "Gilroy Bold", "Verdana", sans-serif;
 	--background-accent: rgba(151, 97, 246, 0.2);
 
 	--shadow-basic: #cccccd;
+	--shadow-accent: #9fdcf8;
 
-	/* Margins */
-	--margin: 20px;
+	--contrast: white;
+
+	--decor-color: #e0e1e6;
+}
+
+.body--dark {
+	/* Dark Theme Colors */
+	--basic-300-fade: #231664;
+
+	--accent-300: #8668eb;
+	--accent-400: #5841a5;
+	--accent: #8668eb;
+	--accent-600: #4f3b94;
+	--accent-700: #473484;
+
+	--second-accent-300: #b456c9;
+	--second-accent-fade: #45233e;
+
+	--text: #f9f9f9;
+	--text-700: #f0f0f1;
+	--text-700-fade: rgba(240, 240, 241, 0.3);
+
+	--background: #07070c;
+	--background-300: #21222f;
+	--background-fade: rgba(7, 7, 12, 0.3);
+
+	--shadow-basic: #221015;
+	--shadow-accent: rgba(88, 65, 165, 0.5);
+
+	--contrast: black;
+
+  --decor-color: rgba(88, 65, 165, 0.6);
 }
 
 
