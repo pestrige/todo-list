@@ -20,11 +20,14 @@ const addTask = () => {
 	newTaskTextContainer.textContent = newTaskText;
 	todoList.appendChild(newTask);
 	newTaskInput.value = '';
-	// скрываем поле ввода и изменяем кнопку
+};
+// скрываем поле ввода и модифицируем кнопку
+const closeTaskInput = () => {
 	newTaskAddButton.classList.remove('todo-list__add-btn--add');
 	newTaskFieldset.classList.remove('todo-list__fieldset--shown');
-
 };
+
+// Обработчик кнопки
 const onNewTaskAddButtonClick = (evt) => {
 	evt.preventDefault();
 	// Проверяем, открыто ли поле ввода задачи
@@ -32,6 +35,7 @@ const onNewTaskAddButtonClick = (evt) => {
 	if (isTaskInputShown) {
 		//добавляем новую задачу в список
 		addTask();
+		closeTaskInput();
 	} else {
 		//показываем инпут для задачи
 		newTaskAddButton.classList.add('todo-list__add-btn--add');
@@ -41,8 +45,7 @@ const onNewTaskAddButtonClick = (evt) => {
 const onNewTaskFormSubmit = (evt) => {
 	evt.preventDefault();
 	addTask();
-	newTaskAddButton.classList.remove('todo-list__add-btn--add');
-	newTaskFieldset.classList.remove('todo-list__fieldset--shown');
+	closeTaskInput();
 }
 
 // Удаление задач
