@@ -46,6 +46,8 @@ const onNewTaskAddButtonClick = (evt) => {
 		newTaskFieldset.classList.add('todo-list__fieldset--shown');
 	}
 };
+
+// Добавление задачи по Enter
 const onNewTaskFormSubmit = (evt) => {
 	evt.preventDefault();
 	addTask();
@@ -90,12 +92,8 @@ const onResetButtonClick = (evt) => {
 
 // Перерисовываем список задач из LocalStorage
 todoListContent = localStorage.getItem('todoList');
-
 if (todoListContent) {
-	console.log(todoListContent);
 	todoList.innerHTML = todoListContent;
-} else {
-	console.log('todo-list is clear')
 }
 
 // Запускаем слушатели событий
