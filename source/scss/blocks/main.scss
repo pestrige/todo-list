@@ -16,13 +16,28 @@
 
 .main__wrapper {
 	max-width: 550px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	// display: flex;
+	// flex-direction: column;
+	// justify-content: center;
+	// align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 
+		"reset theme"
+		"list list";
+	row-gap: 20px;
+}
+
+.main__reset {
+	grid-area: reset;
 }
 
 .main__theme-select {
-	margin-bottom: 20px;
-	margin-left: auto;
+	// margin-bottom: 20px;
+	grid-area: theme;
+	justify-self: end;
+}
+
+.main__todo-list {
+	grid-area: list;
 }

@@ -75,6 +75,9 @@ input[type="radio"].visually-hidden {
 	color: var(--accent);
 }
 
-.transition {
-	transition: all 0.5s;
+.box {
+	width: 100%;
+	border-radius: 30px;
+	background-color: var(--background-300);
+	box-shadow:	15px 15px 30px var(--shadow-basic);
 }

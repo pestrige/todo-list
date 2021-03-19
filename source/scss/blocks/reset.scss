@@ -1,0 +1,26 @@
+.reset {
+	width: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: box-shadow 0.3s;
+
+	&:active {
+		box-shadow:	inset 3px 3px 6px var(--shadow-basic);
+		.reset__icon {
+			opacity: 0.5;
+		}
+	}
+}
+
+.reset__icon {
+	display: block;
+	width: 30px;
+	height: 30px;
+	background-color: var(--text-700);
+	mask-image: url("../img/reset.svg");
+	transition: background-color 0.3s, mask-image 0.3s;
+}

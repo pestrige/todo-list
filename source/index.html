@@ -13,8 +13,13 @@
 	<main class="main">
 		<div class="main__wrapper">
 
+			<!-- Сброс списка -->
+			<button class="main__reset box reset" type="button" title="Сбросить список задач">
+				<span class="reset__icon"></span>
+			</button>
+
 			<!-- Переключатель темы -->
-			<section class="main__theme-select theme">
+			<section class="main__theme-select box theme">
 				<h2 class="visually-hidden">Выбрать тему оформления</h2>
 				<label class="theme__label">
 					<input class="theme-input visually-hidden" type="checkbox">
@@ -25,7 +30,7 @@
 			</section>
 
 			<!-- Главный блок -->
-			<section class="todo">
+			<section class="main__todo-list todo box">
 				<div class="todo__wrapper">
 					<h1 class="todo__title title">Список задач</h1>
 					<div class="todo__description">

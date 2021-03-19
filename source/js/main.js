@@ -1,3 +1,5 @@
+const DEFAULT_TODO_LIST = '<li class="todo-list__item task"><p class="task__title">Выучить промисы</p><label class="task__label"><input class="task__input visually-hidden" type="checkbox"><span class="task__range"><span class="task__handler"></span></span></label></li><li class="todo-list__item task"><p class="task__title">Выучить async await</p><label class="task__label"><input class="task__input visually-hidden" type="checkbox"><span class="task__range"><span class="task__handler"></span></span></label></li><li class="todo-list__item task"><p class="task__title">Закрепить замыкания</p><label class="task-list__label"><input class="task__input visually-hidden" type="checkbox"><span class="task__range"><span class="task__handler"></span></span></label></li>';
+
 const pageBody = document.querySelector('.body');
 const todoList = pageBody.querySelector('.todo-list__list');
 const newTaskForm = pageBody.querySelector('.todo-list__add-wrapper');
@@ -6,13 +8,14 @@ const newTaskInput = newTaskForm.querySelector('.todo-list__add-input');
 const newTaskAddButton = newTaskForm.querySelector('.todo-list__add-btn');
 const newTaskTemplate = pageBody.querySelector('#new-task').content.querySelector('.task');
 const themeSelect = pageBody.querySelector('.theme-input');
+const resetButton = pageBody.querySelector('.reset');
+let todoListContent = null;
 
 // Добавление задачи
 const addTask = () => {
 	const newTaskText = newTaskInput.value;
 	const newTask = newTaskTemplate.cloneNode(true);
 	const newTaskTextContainer = newTask.querySelector('.task__title');
-
 	if (newTaskText === '') {
 		return false;
 	}
@@ -20,6 +23,8 @@ const addTask = () => {
 	newTaskTextContainer.textContent = newTaskText;
 	todoList.appendChild(newTask);
 	newTaskInput.value = '';
+	// Записываем список задач в LocalStorage
+	localStorage.setItem('todoList', todoList.innerHTML);
 };
 // скрываем поле ввода и модифицируем кнопку
 const closeTaskInput = () => {
@@ -33,7 +38,6 @@ const onNewTaskAddButtonClick = (evt) => {
 	// Проверяем, открыто ли поле ввода задачи
 	const isTaskInputShown = newTaskFieldset.classList.contains('todo-list__fieldset--shown');
 	if (isTaskInputShown) {
-		//добавляем новую задачу в список
 		addTask();
 		closeTaskInput();
 	} else {
@@ -57,7 +61,10 @@ const onTaskHandlerClick = (evt) => {
 	}
 	currentTask.classList.add('task--hide');
 	currentTask.classList.add('task--transition');
-	setTimeout(() => currentTask.remove(), 800);
+	setTimeout(() => {
+		currentTask.remove();
+		localStorage.setItem('todoList', todoList.innerHTML);
+	}, 800);
 };
 
 // Переключение тем
@@ -73,8 +80,27 @@ const onThemeSelectChange = () => {
 	pageBody.classList.toggle('body--dark');
 };
 
-// Запускаем слушателей событий
+// Сбрасываем список задач
+const onResetButtonClick = (evt) => {
+	evt.preventDefault();
+
+	localStorage.clear();
+	todoList.innerHTML = DEFAULT_TODO_LIST;
+};
+
+// Перерисовываем список задач из LocalStorage
+todoListContent = localStorage.getItem('todoList');
+
+if (todoListContent) {
+	console.log(todoListContent);
+	todoList.innerHTML = todoListContent;
+} else {
+	console.log('todo-list is clear')
+}
+
+// Запускаем слушатели событий
 todoList.addEventListener('click', onTaskHandlerClick);
 newTaskForm.addEventListener('submit', onNewTaskFormSubmit);
 newTaskAddButton.addEventListener('click', onNewTaskAddButtonClick);
 themeSelect.addEventListener('change', onThemeSelectChange);
+resetButton.addEventListener('click', onResetButtonClick);
